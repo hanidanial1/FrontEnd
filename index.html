@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>conclusion HTML CSS js</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script defer type="module" src="script.js"></script>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg bg-danger">
+          <div class="container-fluid">
+               <a class="navbar-brand" href="#">Full Stack</a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item">
+
+                              <button class="btn btn-outline-dark border-0" type="submit" id="homeBtn">Home</button>
+                         </li>
+                         <li class="nav-item">
+
+                              <button class="btn btn-outline-dark border-0" type="submit" id="poke">pokemons</button>
+                         </li>
+                 
+                         <li class="nav-item dropdown">
+                              <button class="btn btn-outline-dark border-0 " data-bs-toggle="dropdown"
+                                   type="submit" id="cata">Categories</button>
+                              <ul class="dropdown-menu bg-danger-subtle " id="dropDown">
+                              </ul>
+                         </li>
+         
+                         <li class="nav-item">
+                              <a class="nav-link active" aria-current="page" href="#" id="savedJobs">Saved Pokemon 💜</a>
+                         </li>
+                    </ul>
+                    <form class="d-flex"  id="form">
+                         <input class="form-control me-2" value=""  id="searchInput">
+                         <button class="btn btn-outline-dark"  id="searchBtn">Search</button>
+                    </form>
+               </div>
+          </div>
+     </nav>
+     <div id="loaderParent">
+          <div class="loader">
+             
+          </div> <br><br>
+          <p style="text-align: center;"> Please Wait The Page is Loading </p>
+     </div>
+          <main id="homePage">
+          <div class="jumbotron m-5">
+               <h1 class="display-4">Welcome to Our Jobs search service </h1>
+               <p class="lead">to use our service all what you need is a good heart, and little mind 🕵🏻</p>
+               <hr class="my-4">
+               <h3 class="display-6">Enjoy</h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3 g-4 m-4" id="cards">
+          </div>
+     </main>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
