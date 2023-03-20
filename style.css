@@ -30,3 +30,17 @@
      height: 100vh;
 
 }
+
+#ScrollBtn{
+  cursor: pointer;
+  position: fixed;
+  bottom: 5%;
+  left: 48%;
+  padding: 1.2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.961);
+  border-radius: 50%;
+  background-color: hwb(5 12% 13% / 0.908);
+}

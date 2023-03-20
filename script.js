@@ -5,7 +5,6 @@ import { catFunc } from "./categories-poke.js";
 //search done
 import { searchPokemon } from "./searchPoke.js";
 
-
 //global holding elements
 const cards = document.querySelector("#cards");
 const loaderParent = document.querySelector("#loaderParent");
@@ -55,20 +54,19 @@ searchBtn.addEventListener("click", (e) => {
 });
 //             -------->>>>> Important <<<<<<--------
 //  this event allow me to get data from local Storage and Render them
-//on saved Pokemons Page   !!!!!Important 
+//on saved Pokemons Page   !!!!!Important
 savedPokemon.addEventListener("click", () => {
   //to rest cards and main body everytime user click savedPokemonBtn
-  homePage.innerHTML =''
-  cards.innerHTML =''
-  // to refresh the local Storage each time user click savedPokemon 
+  homePage.innerHTML = "";
+  cards.innerHTML = "";
+  // to refresh the local Storage each time user click savedPokemon
   //you get localstorage everytime user click like in line 65
   let pokeStorage = localStorage.getItem("items")
-  ? JSON.parse(localStorage.getItem("items"))
-  : [];
+    ? JSON.parse(localStorage.getItem("items"))
+    : [];
 
-    // then you can render the array with all objs in it like in line 70
-renderPoke(pokeStorage,false)
-
+  // then you can render the array with all objs in it like in line 70
+  renderPoke(pokeStorage, false);
 });
 
 //to get random Quotes for home Page
@@ -81,3 +79,12 @@ const randomQuotes = async (para) => {
   homePage.append(p);
 };
 randomQuotes("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
+
+const ScrollBtn = document.querySelector("#ScrollBtn");
+window.addEventListener("scroll",  ()=> {
+ScrollBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })});
+})
