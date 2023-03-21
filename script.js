@@ -82,6 +82,9 @@ randomQuotes("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
 
 const ScrollBtn = document.querySelector("#ScrollBtn");
 window.addEventListener("scroll",  ()=> {
+
+  let y= window.screenY
+  console.log(y)
 ScrollBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
