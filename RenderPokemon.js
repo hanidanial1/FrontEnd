@@ -4,9 +4,11 @@ const loaderParent = document.querySelector("#loaderParent");
  let pokeStorage = localStorage.getItem("items")
   ? JSON.parse(localStorage.getItem("items"))
   : [];
-//to get all Pokemons
+//to get all Pokemons "Api Of Pokemons"
 const apiUrl = " https://api.pokemontcg.io/v2/cards";
 export const pokemonCreate = async () => {
+  
+  //rest All Elements That IN HTML
   homePage.innerHTML = "";
   cards.innerHTML = "";
   loaderParent.style.display = "block";
@@ -15,6 +17,7 @@ export const pokemonCreate = async () => {
   renderPoke(data.data);
 };
 
+//to render All Cards Of Pokemons From API 
 export const renderPoke = (arr, trueOrFalse = true) => {
   for (let item of arr) {
     const col = document.createElement("div");
@@ -41,7 +44,6 @@ export const renderPoke = (arr, trueOrFalse = true) => {
     h5.classList = "card-title fs-6 text-center";
     h5.textContent = item.title;
     h5.style.textDecoration = "underline";
-    //to get all jobs data and render them
 
     //create two buttons for adding to saved Jobs
     const saveBtn = document.createElement("button");

@@ -1,14 +1,11 @@
-//to get all pokemons done
+//importing all functions needed
 import { renderPoke, pokemonCreate } from "./RenderPokemon.js";
-//catagories done
 import { catFunc } from "./categories-poke.js";
-//search done
 import { searchPokemon } from "./searchPoke.js";
 
 //global holding elements
 const cards = document.querySelector("#cards");
 const loaderParent = document.querySelector("#loaderParent");
-const dropDown = document.querySelector("#dropDown");
 const homeBtn = document.querySelector("#homeBtn");
 const homePage = document.querySelector("#homePage");
 const savedPokemon = document.querySelector("#savedJobs");
@@ -16,7 +13,6 @@ const pokeElement = document.querySelector("#poke");
 const searchBtn = document.querySelector("#searchBtn");
 const form = document.querySelector("#form");
 const searchInput = document.querySelector("#searchInput");
-const cata = document.querySelector("#cata");
 
 pokeElement.addEventListener("click", () => {
   pokemonCreate();
@@ -44,6 +40,7 @@ homeBtn.addEventListener("click", () => {
   loaderParent.style.display = "none";
 });
 
+//search for pokemon by name
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault(form);
   const searchApi = `https://api.pokemontcg.io/v2/cards?q=name:${searchInput.value}`;
@@ -52,6 +49,7 @@ searchBtn.addEventListener("click", (e) => {
   loaderParent.style.display = "block";
   searchPokemon(searchApi);
 });
+
 //             -------->>>>> Important <<<<<<--------
 //  this event allow me to get data from local Storage and Render them
 //on saved Pokemons Page   !!!!!Important
@@ -80,14 +78,15 @@ const randomQuotes = async (para) => {
 };
 randomQuotes("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
 
+//here to go fast to the top by goUpBtn
 const ScrollBtn = document.querySelector("#ScrollBtn");
-window.addEventListener("scroll",  ()=> {
-
-  let y= window.screenY
-  console.log(y)
-ScrollBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  })});
-})
+window.addEventListener("scroll", () => {
+  let y = window.screenY;
+  console.log(y);
+  ScrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});

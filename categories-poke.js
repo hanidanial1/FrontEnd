@@ -1,4 +1,7 @@
+//importing functions needed 
 import { renderPoke } from "./RenderPokemon.js";
+
+//holding all Elements that i need !
 const typesApi = "https://api.pokemontcg.io/v2/types";
 const dropDown = document.querySelector("#dropDown");
 const cards = document.querySelector("#cards");
@@ -13,10 +16,12 @@ export const catFunc = async () => {
     const data = await res.json();
 
     for (let item of data.data) {
+      //creating dropDown-item  and listen to event by addeventlistener
       const li = document.createElement("li");
       const a = document.createElement("a");
-      a.classList = "dropdown-item";
+      a.classList = "dropdown-item ";
       a.textContent = item;
+      
       a.addEventListener("click", async () => {
         homePage.innerHTML = "";
         cards.innerHTML = "";
@@ -30,7 +35,10 @@ export const catFunc = async () => {
     console.log(error);
   }
 };
+
 catFunc()
+
+//array created to hold the apis -> Obj that match The Type of First "Api Types"
 let TypePokemonArr = [];
 //to get the wanted Pokemon From other Api
 const apiUrl = " https://api.pokemontcg.io/v2/cards";
@@ -49,6 +57,7 @@ async function pokemonByType(type) {
   }
   // here to create the card of pokemon 
   renderPoke(TypePokemonArr);
+
   //here i have rest the array 
   TypePokemonArr = []
 }
