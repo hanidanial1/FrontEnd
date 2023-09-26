@@ -67,16 +67,7 @@ savedPokemon.addEventListener("click", () => {
   renderPoke(pokeStorage, false);
 });
 
-//to get random Quotes for home Page
-const randomQuotes = async (para) => {
-  const res = await fetch(para);
-  const data = await res.json();
-  const p = document.createElement("h3");
-  p.classList = "card-text p-6 text-center text-smaller mt-2";
-  p.textContent = data;
-  homePage.append(p);
-};
-randomQuotes("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
+
 
 //here to go fast to the top by goUpBtn
 const ScrollBtn = document.querySelector("#ScrollBtn");
