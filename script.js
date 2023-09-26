@@ -36,7 +36,7 @@ homeBtn.addEventListener("click", () => {
   cards.innerHTML = "";
   loaderParent.style.display = "block";
   render();
-  randomQuotes("https://ron-swanson-quotes.herokuapp.com/v2/quotes");
+  
   loaderParent.style.display = "none";
 });
 
